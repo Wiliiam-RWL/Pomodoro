@@ -37,6 +37,10 @@ function Header() {
     navigate("/");
   };
 
+  const jumpToGithub = () => {
+    window.location.href = "https://github.com/Wiliiam-RWL/Pomodoro";
+  };
+
   return (
     <>
       <AppBar position="static" color="primary">
@@ -78,7 +82,7 @@ function Header() {
                 <MenuItem key={"About"} onClick={handleAboutDialogOpen}>
                   <Typography textAlign="center">About</Typography>
                 </MenuItem>
-                <MenuItem key={"Proj"} onClick={() => {}}>
+                <MenuItem key={"Proj"} onClick={jumpToGithub}>
                   <Typography textAlign="center">Project</Typography>
                 </MenuItem>
               </Menu>
@@ -140,6 +144,7 @@ function Header() {
               <Button
                 key="Proj"
                 sx={{ my: 2, color: "white", display: "block" }}
+                onClick={jumpToGithub}
               >
                 Project
               </Button>

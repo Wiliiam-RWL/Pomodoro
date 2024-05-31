@@ -21,7 +21,7 @@ export default function Pomodoro() {
 
   const handleStartRunning = () => {
     if (timerState === "Stopping") {
-      const focusSound = new Audio("../../public/Jinri-Focus.m4a");
+      const focusSound = new Audio("/Jinri-Focus.m4a");
       focusSound.play();
     }
     setTimerState("Running");
@@ -60,26 +60,24 @@ export default function Pomodoro() {
         setCurrentSession("LongBreak");
         setGoalTime(longBreakTime * 60 * 1000);
         focusCount.current = 0;
-        const longBreakSound = new Audio("../../public/Daren-LongBreak.m4a");
+        const longBreakSound = new Audio("/Daren-LongBreak.m4a");
         longBreakSound.play();
       } else {
         setCurrentSession("ShortBreak");
         setGoalTime(shortBreakTime * 60 * 1000);
-        const shortBreakSound = new Audio(
-          "../../public/ZhongKouWei-ShortBreak.m4a"
-        );
+        const shortBreakSound = new Audio("/ZhongKouWei-ShortBreak.m4a");
         shortBreakSound.play();
       }
     } else if (currentSession === "ShortBreak") {
       setCurrentSession("Focus");
       setGoalTime(focusTime * 60 * 1000);
-      const focusSound = new Audio("../../public/Jinri-Focus.m4a");
+      const focusSound = new Audio("/Jinri-Focus.m4a");
       focusSound.play();
     } else {
       // Long Break
       setCurrentSession("Focus");
       setGoalTime(focusTime * 60 * 1000);
-      const focusSound = new Audio("../../public/Jinri-Focus.m4a");
+      const focusSound = new Audio("/Jinri-Focus.m4a");
       focusSound.play();
     }
   };
